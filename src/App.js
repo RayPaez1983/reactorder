@@ -1,13 +1,36 @@
-import logo from "./madboy.jpg";
-import "./App.css";
+import Directory from "./components/directory/directory";
 
 function App() {
+  const categories = [
+    {
+      id: 1,
+      title: "Pijamas",
+      imageUrl: "images/uno.jpg",
+    },
+    {
+      id: 2,
+      title: "Batas",
+      imageUrl: "images/batas1.jpg",
+    },
+    {
+      id: 3,
+      title: "Pantuflas",
+      imageUrl: "images/pantuflas.jpg",
+    },
+    {
+      id: 4,
+      title: "Cojines",
+      imageUrl: "images/cojines.jpg",
+    },
+    {
+      id: 5,
+      title: "mens",
+      imageUrl: "images/uno.jpg",
+    },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="ma" />
-        <p>This is Ramon new App lets hack back to work with this</p>
-      </header>
+    <div className="categories-container">
+      <Directory categories={categories} />
     </div>
   );
 }
