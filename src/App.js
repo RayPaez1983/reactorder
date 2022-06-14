@@ -1,38 +1,27 @@
-import Directory from "./components/directory/directory";
+import { Routes, Route } from "react-router";
+import Home from "./components/routes/home/home";
+import Women from "./components/routes/home/women";
+import Men from "./components/routes/home/men";
+import Kids from "./components/routes/home/kids";
+import Family from "./components/routes/home/family";
+import Accessories from "./components/routes/home/accessories";
+import NavMenu from "./components/nav-menu/navMenu";
+import SingIn from "./components/routes/sing-in/singIn";
 
-function App() {
-  const categories = [
-    {
-      id: 1,
-      title: "Pijamas",
-      imageUrl: "images/uno.jpg",
-    },
-    {
-      id: 2,
-      title: "Batas",
-      imageUrl: "images/batas1.jpg",
-    },
-    {
-      id: 3,
-      title: "Pantuflas",
-      imageUrl: "images/pantuflas.jpg",
-    },
-    {
-      id: 4,
-      title: "Cojines",
-      imageUrl: "images/cojines.jpg",
-    },
-    {
-      id: 5,
-      title: "mens",
-      imageUrl: "images/uno.jpg",
-    },
-  ];
+const App = () => {
   return (
-    <div className="categories-container">
-      <Directory categories={categories} />
-    </div>
+    <Routes>
+      <Route path="/" element={<NavMenu />}>
+        <Route index element={<Home />} />
+        <Route path="women" element={<Women />} />
+        <Route path="men" element={<Men />} />
+        <Route path="kids" element={<Kids />} />
+        <Route path="family" element={<Family />} />
+        <Route path="sing-in" element={<SingIn />} />
+        <Route path="accessories" element={<Accessories />} />
+      </Route>
+    </Routes>
   );
-}
+};
 
 export default App;
