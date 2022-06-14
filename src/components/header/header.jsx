@@ -5,16 +5,20 @@ import { BsCartCheck } from "react-icons/bs";
 import "./header.scss";
 
 const Header = () => {
+  const imageUrl = "images/logoIndi.jpg"
   console.log("este es mi Header");
   return (
-    <header>
-      <div
-        className="head"
-        style={{
+    <header   style={{
           backgroundImage: `linear-gradient(to top,
       rgba(223, 137, 181, 0.349) 0%,
       rgba(191, 217, 254, 0.212) 100%`,
-        }}
+        }}>
+      <div
+        className="head"
+       style={{
+            backgroundImage: `url(${imageUrl})`,
+            backgroundRepeat: 'no-repeat'
+          }}
       >
         <nav className="uno">
           <Link to="/">Inicio</Link>
